@@ -8,6 +8,7 @@ new Vue({
 		},
 		source: '',
 		snapshot: '',
+		test: '',
 	},
 
 	methods: {
@@ -26,6 +27,18 @@ new Vue({
 		signOut() {
 			firebase.auth().signOut();
 		},
+		
+		readFile() {
+			if (this.files && this.files[0]) {
+				var FR= new FileReader();
+				
+				FR.addEventListener("load", function(fileLoaded) {
+					document.getElementById("AadhaarImage").src = fileLoaded.target.result;
+				}); 
+			
+				FR.readAsDataURL( this.files[0] );
+			}
+		},
 
 		startVideoStream() {
 			source = this.$refs.video;
@@ -35,7 +48,7 @@ new Vue({
 		takeSnapshot() {
 			snapshot = this.$refs.canvas;
 			snapshot.getContext('2d').drawImage(source, 0, 0, 160, 160);
-			document.getElementById('userPhoto').value = this.$refs.canvas.toDataURL("image/jpeg");
+			document.getElementById('userPhoto').value = snapshot.toDataURL("image/jpeg");
 		},
 	},
 })

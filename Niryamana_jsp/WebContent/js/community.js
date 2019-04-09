@@ -31,12 +31,4 @@ new Vue({
 			firebase.auth().signOut();
 		}
 	},
-
-	created () {
-		firebase.auth().onAuthStateChanged(user => {
-			if (user) {
-				this.userLoginStatus = true;
-			}
-		})
-	},
 })
