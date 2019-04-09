@@ -26,20 +26,20 @@
 		<nav>
 			<ul class="navbar">
 				<i class="fas fa-user-circle fa-4x" style="float: left" @click="openNav()"></i>
-				<a href="index.html"><li>Home</li></a>
-				<a href="community.html"><li>The Community</li></a>
-				<a href="about.html"><li>About</li></a>
-				<a href="regLogin.html" style="float: right;" @click="signOut"><li>Logout</li></a>
+				<a href="index.jsp"><li>Home</li></a>
+				<a href="community.jsp"><li>The Community</li></a>
+				<a href="about.jsp"><li>About</li></a>
+				<a href="regLogin.jsp" style="float: right;" @click="signOut"><li>Logout</li></a>
 			</ul>
 		</nav>
 
 		<aside>
 			<div id="mySidenav" class="sidenav">
 				<span class="closebtn" @click="closeNav()"><i class="far fa-window-close"></i></span>
-				<a href="profile.html">Your Profile</a>
-				<a href="helpReq.html">Help Requests</a>
-				<a href="volunReq.html">Volunteering Requests</a>
-				<a href="friends.html">Your Friends</a>
+				<a href="profile.jsp">Your Profile</a>
+				<a href="helpReq.jsp">Help Requests</a>
+				<a href="volunReq.jsp">Volunteering Requests</a>
+				<a href="friends.jsp">Your Friends</a>
 			</div>
 		</aside>
 		

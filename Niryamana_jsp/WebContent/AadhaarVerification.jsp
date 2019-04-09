@@ -45,7 +45,7 @@
 
 		<form class="content" method="POST" action="userInfo">
 			<p>Please upload a clear picture of your Aadhaar card from your device:</p>
-			<input type="file" name="AadhaarImage" accept="image/*"><br /><br />
+			<input type="file" name="AadhaarImage" accept="image/*" @change="readFile"><br /><br />
 
 			<p>Upload a picture of yourself via your PC's webcam or your mobile phone's front camera (please allow the browser to access your device's camera for this to work):</p>
 			<button type="button" @click="startVideoStream()"><i class="fas fa-video">Start camera</i></button><br />

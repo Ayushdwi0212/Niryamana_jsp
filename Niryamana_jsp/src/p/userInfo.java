@@ -30,12 +30,17 @@ public class userInfo extends HttpServlet {
         InputStream isu = null;
         HttpSession sess = req.getSession();
         String uid = (String)sess.getAttribute("uid");
+        String userPhoto = req.getParameter("userPhoto");
+        String AadhaarImage = req.getParameter("AadhaarImage");
+        System.out.println(uid+"\n"+userPhoto+"\n"+AadhaarImage);
+        
+        
         
 		 try {
 			 con = Connect_db.getCon();
 			 ps= con.prepareStatement("insert into aadhardb values(?,?,?,?)");
 			   
-			 is = new FileInputStream(new File(req.getParameter("userPhoto.jpg")));
+			 is = new FileInputStream(new File(req.getParameter("userPhoto")));
 			 
 			    ps.setString(1,uid);
 			    ps.setBinaryStream(2,is);

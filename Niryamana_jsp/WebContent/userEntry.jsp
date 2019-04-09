@@ -11,17 +11,16 @@
 try{
     Connection con= Connect_db.getCon();
     System.out.println("1");
-    PreparedStatement pst= con.prepareStatement("insert into userdb values(?,?,?,?,?,?,?,?,?,?)");
+    PreparedStatement pst= con.prepareStatement("insert into userdb values(?,?,?,?,?,?,?,?,?)");
     pst.setString(1,uid);
     pst.setString(2,null);
     pst.setString(3,null);
     pst.setString(4,null);
     pst.setString(5,null);
-    pst.setInt(6,0);
+    pst.setString(6,null);
     pst.setString(7,null);
-    pst.setString(8,null);
+    pst.setInt(8,0);
     pst.setInt(9,0);
-    pst.setInt(10,0);
 
     pst.execute();
     
