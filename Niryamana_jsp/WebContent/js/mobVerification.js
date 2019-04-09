@@ -35,15 +35,15 @@ new Vue({
 		},
 
 		sendOTP() {
-			firebase.auth().signInWithPhoneNumber(this.mobNumber, window.appVerifier).then((confirmationResult) => {
-				window.confirmationResult = confirmationResult;
-			});
-
-			window.appVerifier = new firebase.auth.RecaptchaVerifier('recaptchaVerifierDIV', {
-				'size': 'invisible',
+            window.appVerifier = new firebase.auth.RecaptchaVerifier('recaptchaVerifierDIV', {
+				'size': 'visible',
 				'callback': (response) => {
 					console.log(response);
 				}
+			});
+
+			firebase.auth().signInWithPhoneNumber(this.mobNumber, window.appVerifier).then((confirmationResult) => {
+				window.confirmationResult = confirmationResult;
 			});
 		},
 
