@@ -27,18 +27,6 @@ new Vue({
 		signOut() {
 			firebase.auth().signOut();
 		},
-		
-		readFile() {
-			if (this.files && this.files[0]) {
-				var FR= new FileReader();
-				
-				FR.addEventListener("load", function(e) {
-					document.getElementById("AadhaarImage").src = e.target.result;
-				}); 
-			
-				FR.readAsDataURL( this.files[0] );
-			}
-		},
 
 		startVideoStream() {
 			source = this.$refs.video;
@@ -50,5 +38,17 @@ new Vue({
 			snapshot.getContext('2d').drawImage(source, 0, 0, 160, 160);
 			document.getElementById('userPhoto').value = snapshot.toDataURL("image/jpeg");
 		},
-	},
+    },
 })
+
+function readFile() {
+    if (this.files && this.files[0]) {
+        var FR= new FileReader();
+        
+        document.getElementById("AadhaarImage").src = e.target.result;
+    
+        FR.readAsDataURL( this.files[0] );
+    }
+}
+
+document.getElementById("AadhaarImage").addEventListener("change", readFile);
