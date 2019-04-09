@@ -8,7 +8,6 @@
   
     System.out.println(uid);
 
-
 try{
     Connection con= Connect_db.getCon();
     System.out.println("1");

@@ -1,7 +1,7 @@
 <%@page import="java.sql.*,p.Connect_db" %>
 
 <%
- 
+
   String uid = request.getParameter("userUID");
   String name = request.getParameter("name");
   String dob= request.getParameter("dateOfBirth");

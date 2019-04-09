@@ -1,6 +1,5 @@
 <%@page import="java.sql.*,java.util.*,p.*" %>
 
-
 <%
 	String uid = (String)session.getAttribute("uid");
 	System.out.println(uid);
