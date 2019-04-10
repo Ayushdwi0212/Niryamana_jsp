@@ -49,10 +49,13 @@
 				<div class="card">
 					<header class="card-header">
 						<p class="card-header-title">Sephiroth</p>
-						<a href="#" class="card-header-icon"><span class="icon"><i class="fas fa-angle-down">
-							<div class="dropdown">								
-								<div class="dropdown-menu" id="dropdown-menu3" role="menu">
-									<div class="dropdown-content">
+						
+						<div class="dropdown is-active">
+							<div class="dropdown-trigger">
+								<a href="#" class="card-header-icon"><span class="icon"><i class="fas fa-angle-down"></i></span></a>
+							</div>
+							<div class="dropdown-menu" id="dropdown-menu3" role="menu">
+								<div class="dropdown-content">
 									<a href="#" class="dropdown-item">
 									Overview
 									</a>
@@ -78,10 +81,8 @@
 									<a href="#" class="dropdown-item">
 									More
 									</a>
-									</div>
 								</div>
-							</div>
-						</i></span></a>
+							</div>						
 					</header>
 
 					<p class="card-content">

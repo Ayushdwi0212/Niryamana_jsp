@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 
 <%
-	
 
 
 
 
 %>
-
 
 <!DOCTYPE html>
 <html>
@@ -62,7 +60,7 @@
 						<figure class="media-left">
 							<p class="image is-96x96">
 								<a href="updateProfilePic.jsp">
-									<img class="is-rounded" :src="profilePic">
+									<img class="is-rounded" src="profilePic">
 								</a>
 							</p>
 						</figure>
