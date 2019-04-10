@@ -26,7 +26,7 @@
 				<a href="index.jsp"><li>Home</li></a>
 				<a href="community.jsp"><li>The Community</li></a>
 				<a href="about.jsp"><li>About</li></a>
-				<a href="regLogin.jsp" style="float: right;" @click="signOut"><li>Logout</li></a>
+				<a href="regLogin.jsp" style="float: right;" @click="signOut()"><li>Logout</li></a>
 			</ul>
 		</nav>
 
@@ -45,7 +45,8 @@
 
 		<form class="content" method="POST" action="userInfo">
 			<p>Please upload a clear picture of your Aadhaar card from your device:</p>
-			<input type="file" name="AadhaarImage" accept="image/*" @change="readFile"><br /><br />
+			<input type="file" name="AadhaarImage" id="AadhaarImage" accept="image/*"><br /><br />
+			<input type="hidden" name="AadhaarImageURI" id="AadhaarImageURI"></input>
 
 			<p>Upload a picture of yourself via your PC's webcam or your mobile phone's front camera (please allow the browser to access your device's camera for this to work):</p>
 			<button type="button" @click="startVideoStream()"><i class="fas fa-video">Start camera</i></button><br />
@@ -67,5 +68,6 @@
 	</body>
 </div>
 
-<script type="text/javascript" src="js/AadhaarVerification.js"></script>>
+<script type="text/javascript" src="js/AadhaarVerification.js"></script>
+<script type="text/javascript" src="js/JPEGtoBase64.js"></script>
 </html>

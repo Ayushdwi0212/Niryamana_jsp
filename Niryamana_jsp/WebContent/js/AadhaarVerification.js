@@ -7,7 +7,8 @@ new Vue({
 			video: true,
 		},
 		source: '',
-		snapshot: '',
+        snapshot: '',
+        FR: '',
 		test: '',
 	},
 
@@ -26,7 +27,22 @@ new Vue({
 
 		signOut() {
 			firebase.auth().signOut();
-		},
+        },
+        
+        // readFile() {
+
+        //     if (this.files && this.files[0]) {
+
+        //         FR= new FileReader();
+
+        //         FR.addEventListener("load", function(e) {
+        //             document.getElementById("AadhaarImage").src = e.target.result;
+        //             document.getElementById("test").innerHTML = e.target.result;
+        //         }); 
+
+        //         FR.readAsDataURL( this.files[0] );
+        //     }
+        // },
 
 		startVideoStream() {
 			source = this.$refs.video;
@@ -40,15 +56,3 @@ new Vue({
 		},
     },
 })
-
-function readFile() {
-    if (this.files && this.files[0]) {
-        var FR= new FileReader();
-        
-        document.getElementById("AadhaarImage").src = e.target.result;
-    
-        FR.readAsDataURL( this.files[0] );
-    }
-}
-
-document.getElementById("AadhaarImage").addEventListener("change", readFile);

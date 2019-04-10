@@ -7,7 +7,6 @@ public class User {
 	private String dob;
 	private String email;
 	private String phoneNo;
-	private int aadharNo;
 	private String city;
 	private String state;
 	private int reqCount;
