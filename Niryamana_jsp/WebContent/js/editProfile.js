@@ -12,7 +12,7 @@ new Vue({
 	el: '#main',
 
 	data: {
-		profilePic: '',
+		profileImage: '',
 		name: '',
 		dateOfBirth: '',
 		state: '',
@@ -140,5 +140,22 @@ new Vue({
 				document.getElementById("email").value = this.email;
 			}
 		})
-	},
+    },
 })
+
+function readFile() {
+
+	if (this.files && this.files[0]) {
+
+		var FR= new FileReader();
+
+		FR.addEventListener("load", function(fileUploaded) {
+			document.getElementById("profileImage").src = fileUploaded.target.result;
+			document.getElementById("profileImageURI").value = fileUploaded.target.result;
+		}); 
+
+		FR.readAsDataURL( this.files[0] );
+	}
+}
+
+document.getElementById("profileImage").addEventListener("change", readFile);

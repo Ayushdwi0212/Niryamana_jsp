@@ -47,11 +47,11 @@
 		</aside>
 
 		<content class="content text-is-centered">
-			<form>
+			<form method="POST" action="test1">
 				<p>Please choose a picture from your device:</p>
-				<input type="file" name="profilePic" ref="profilePic" accept="image/*"><br />
+				<input type="file" name="profileImage" id="profileImage" accept="image/*"><br />
 
-				<input type="submit" onclick= "uploadProfilePic()">
+				<input type="submit">
 			</form>
 		</content>
 

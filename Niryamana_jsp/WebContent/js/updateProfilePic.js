@@ -18,8 +18,6 @@ new Vue({
 		profilePic: '',
 		imageFile: '',
 		imageName: '',
-		task: '',
-		photoURL: '',
 	},
 
 	methods: {
@@ -41,14 +39,19 @@ new Vue({
 	},
 })
 
-function uploadProfilePic() {
-	const imageFile = document.querySelector('#profilePic').files[0];
-	const imageName = firebase.auth().currentUser.uid;
-	var task = firebase.storage().ref(imageName).put(imageFile);
-	task.then(snapshot => snapshot.ref.getDownloadURL())
-	.then((url) => {
-		firebase.auth().currentUser.updateProfile({
-			photoURL : url
-		})
-	})
+function readFile() {
+
+	if (this.files && this.files[0]) {
+
+		var FR= new FileReader();
+
+		FR.addEventListener("load", function(fileUploaded) {
+			document.getElementById("profileImage").src = fileUploaded.target.result;
+			document.getElementById("profileImageURI").value = fileUploaded.target.result;
+		}); 
+
+		FR.readAsDataURL( this.files[0] );
+	}
 }
+
+document.getElementById("profileImage").addEventListener("change", readFile);

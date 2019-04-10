@@ -22,7 +22,7 @@
 			<img src="images/niryamana_logo.png">
 		</header>
 
-		<form class="column main" method="GET" action="editUser.jsp">
+		<form class="column main" method="POST" action="editUser.jsp">
 			<h1>You can edit your profile details here:</h1><br />
 	
 			<label>Name:</label>
@@ -30,6 +30,10 @@
 	
 			<label>Date of birth:</label>
 			<input class="input" type="date" name="dateOfBirth" v-model="dateOfBirth">
+			
+			<label>Profile Image:</label>
+			<input type="file" name="profileImage" id="profileImage" accept="image/*"></input><br />
+			<input type="hidden" name="profileImageURI" id="profileImageURI"></input>
 	
 			<label>State of residence:</label><br />
 			<select name="state" v-model="state" @change="displayCity">

@@ -8,7 +8,9 @@
   String state= request.getParameter("state");
   String city= request.getParameter("city");
   String email= request.getParameter("email");
+  String proImg = request.getParameter("profileImageURI");
   System.out.println(uid);
+  System.out.println(proImg);
   
   try{
     Connection con= Connect_db.getCon();
