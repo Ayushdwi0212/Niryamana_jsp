@@ -14,13 +14,20 @@
   
   try{
     Connection con= Connect_db.getCon();
-    PreparedStatement pst= con.prepareStatement("update userdb set name=?, dob=?, email=?, city=?, state=? where u_id=?");
+    PreparedStatement pst= con.prepareStatement("update userdb set name=?, dob=?, email=?, city=?, state=?, proimg=?  where u_id=?");
+    
+    Clob pImg = con.createClob();
+	pImg.setString(1, proImg);
+
+    
     pst.setString(1,name);
     pst.setString(2,dob);
     pst.setString(3,email);
     pst.setString(4,city);
     pst.setString(5,state);
-    pst.setString(6,uid);
+    pst.setClob(6,pImg);
+    pst.setString(7,uid);
+    
     
 
     pst.execute();

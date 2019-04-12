@@ -43,7 +43,7 @@
 			</div>
 		</aside>
 
-		<form class="content" method="POST" action="userInfo">
+		<form class="content" method="POST" action="userAadhaarEntry.jsp">
 			<p>Please upload a clear picture of your Aadhaar card from your device:</p>
 			<input type="file" name="AadhaarImage" id="AadhaarImage" accept="image/*"><br /><br />
 			<input type="hidden" name="AadhaarImageURI" id="AadhaarImageURI"></input>

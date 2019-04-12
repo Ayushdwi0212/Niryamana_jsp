@@ -26,26 +26,23 @@ public class userInfo extends HttpServlet {
 		    throws ServletException, IOException{
 		Connection con = null;
         PreparedStatement ps = null;
-        InputStream is = null;
-        InputStream isu = null;
         HttpSession sess = req.getSession();
         String uid = (String)sess.getAttribute("uid");
         String userPhoto = req.getParameter("userPhoto");
-        String AadhaarImage = req.getParameter("AadhaarImage");
-        System.out.println(uid+"\n"+userPhoto+"\n"+AadhaarImage);
+        String AadhaarImageURI = req.getParameter("AadhaarImageURI");
+        System.out.println(uid+"\n"+userPhoto+"\n"+AadhaarImageURI);
         
         
         
 		 try {
 			 con = Connect_db.getCon();
-			 ps= con.prepareStatement("insert into aadhardb values(?,?,?,?)");
+			 ps= con.prepareStatement("update aadhardb set userimg=?, aadharimg=?, where u_id=?");
 			   
-			 is = new FileInputStream(new File(req.getParameter("userPhoto")));
+			
 			 
-			    ps.setString(1,uid);
-			    ps.setBinaryStream(2,is);
-			    ps.setBinaryStream(3,isu);
-			    ps.setString(4,"N");
+			    ps.setString(1,userPhoto);
+			    ps.setString(2,AadhaarImageURI);
+			    ps.setString(3,uid);
 	            
 	            ps.execute();
 	         

@@ -9,8 +9,10 @@ public class User {
 	private String phoneNo;
 	private String city;
 	private String state;
+	private String proImg;
 	private int reqCount;
 	private int postCount;
+	
 	/**
 	 * @return the uid
 	 */
@@ -94,6 +96,18 @@ public class User {
 	 */
 	public void setState(String state) {
 		this.state = state;
+	}
+	/**
+	 * @return the proImg
+	 */
+	public String getProImg() {
+		return proImg;
+	}
+	/**
+	 * @param proImg the proImg to set
+	 */
+	public void setProImg(String proImg) {
+		this.proImg = proImg;
 	}
 	/**
 	 * @return the reqCount

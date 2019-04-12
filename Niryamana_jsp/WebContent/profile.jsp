@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 
 <%
-
+     String proImg = (String)session.getAttribute("proImg");
 
 
 
@@ -59,9 +59,7 @@
 					<div class="media">
 						<figure class="media-left">
 							<p class="image is-96x96">
-								<a href="updateProfilePic.jsp">
-									<img class="is-rounded" src="profilePic">
-								</a>
+								<img class="is-rounded" src="<%= proImg%>">
 							</p>
 						</figure>
 
