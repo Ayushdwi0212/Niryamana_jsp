@@ -47,6 +47,7 @@
 		session.setAttribute("proImg", currUser.getProImg());
 		
 		response.sendRedirect("profile.jsp");
+		con.close();
 		
 	}
 	catch(Exception e){
