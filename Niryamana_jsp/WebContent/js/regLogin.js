@@ -28,6 +28,11 @@ new Vue ({
 			firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
 				firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then((signedUp) => {
 					this.signedUp = true;
+
+					firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
+						userUID: firebase.auth().currentUser.uid,
+						email: firebase.auth().currentUser.email,
+					});
 				})
 				.catch((error) => {
 					this.errorCode = error.code;

@@ -7,8 +7,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/vue"></script>
 	<link rel="stylesheet" href="css/regLogin.css">
 	<link rel="stylesheet" href="css/common-elements.css">

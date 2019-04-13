@@ -8,10 +8,43 @@ const config = {
 };
 firebase.initializeApp(config);
 
+Vue.component("cards", {
+	template: `<section class="column has-text-centered">
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title"></p>
+						
+						<div class="dropdown is-active">
+							<div class="dropdown-trigger">
+								<a href="#" class="card-header-icon" @click="isVisible = !isVisible"><span class="icon"><i class="fas fa-angle-down"></i></span></a>
+							</div>
+
+							<div class="dropdown-menu" role="menu" v-if="isVisible">
+								<a href="responseCounter" class="dropdown-item">
+									Volunteer for this event
+								</a>
+
+								<a href="#" class="dropdown-item">
+									Chat with the event creator
+								</a>
+							</div>
+						</div>
+					</header>
+
+					<p class="card-content">
+					</p>
+				</div>
+			</section>`,
+
+			data() {
+				return {isVisible: false}
+			}
+})
+
 new Vue({
 	el: '#main',
 	data: {
-		userLoginStatus: false,
+		isVisible: false,
 	},
 
 	methods: {

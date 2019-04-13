@@ -43,46 +43,33 @@
 			</div>
 		</aside>
 
-		<div class="columns content">
-		<a href="addPost.jsp"><button style="float:right">Add a new request</button></a><br />
-			<section class="column has-text-centered">
+		<a href="addPost.jsp" style="float: right;">Add a new post</a><br />
+
+		<div class="columns content is-marginless">
+
+			<cards></cards>
+
+			<cards></cards>
+			<!-- <section class="column has-text-centered">
 				<div class="card">
 					<header class="card-header">
 						<p class="card-header-title">Sephiroth</p>
 						
 						<div class="dropdown is-active">
 							<div class="dropdown-trigger">
-								<a href="#" class="card-header-icon"><span class="icon"><i class="fas fa-angle-down"></i></span></a>
+								<a href="#" class="card-header-icon" @click="isVisible = !isVisible"><span class="icon"><i class="fas fa-angle-down"></i></span></a>
 							</div>
-							<div class="dropdown-menu" id="dropdown-menu3" role="menu">
-								<div class="dropdown-content">
-									<a href="#" class="dropdown-item">
-									Overview
-									</a>
-									<a href="#" class="dropdown-item">
-									Modifiers
-									</a>
-									<a href="#" class="dropdown-item">
-									Grid
-									</a>
-									<a href="#" class="dropdown-item">
-									Form
-									</a>
-									<a href="#" class="dropdown-item">
-									Elements
-									</a>
-									<a href="#" class="dropdown-item">
-									Components
-									</a>
-									<a href="#" class="dropdown-item">
-									Layout
-									</a>
-									<hr class="dropdown-divider">
-									<a href="#" class="dropdown-item">
-									More
-									</a>
-								</div>
-							</div>						
+
+							<div class="dropdown-menu" role="menu" v-if="isVisible">
+								<a href="responseCounter" class="dropdown-item">
+									Volunteer for this event
+								</a>
+
+								<a href="#" class="dropdown-item">
+									Chat with the event creator
+								</a>
+							</div>
+						</div>
 					</header>
 
 					<p class="card-content">
@@ -92,11 +79,28 @@
 						Ira vehemti<br />
 					</p>
 				</div>
+			</section> -->
 
+			<!-- <section class="column has-text-centered">
 				<div class="card">
 					<header class="card-header">
 						<p class="card-header-title">Sephiroth</p>
-						<a href="#" class="card-header-icon"> <span class="icon"><i	class="fas fa-angle-down"></i></span></a>
+						
+						<div class="dropdown is-active">
+							<div class="dropdown-trigger">
+								<a href="#" class="card-header-icon" @click="isVisible = !isVisible"><span class="icon"><i class="fas fa-angle-down"></i></span></a>
+							</div>
+
+							<div class="dropdown-menu" role="menu" v-if="isVisible">
+								<a href="responseCounter" class="dropdown-item">
+									Volunteer for this event
+								</a>
+
+								<a href="#" class="dropdown-item">
+									Chat with the event creator
+								</a>
+							</div>
+						</div>
 					</header>
 
 					<p class="card-content">
@@ -106,7 +110,7 @@
 						Ira vehemti<br />
 					</p>
 				</div>
-			</section>
+			</section> -->
 		</div>
 
 		<footer class="footer">
