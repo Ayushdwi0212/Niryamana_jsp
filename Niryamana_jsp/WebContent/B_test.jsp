@@ -52,6 +52,7 @@
 		
 		
 		response.sendRedirect("profile.jsp");
+		con.close();
 		
 	}
 	catch(Exception e){
