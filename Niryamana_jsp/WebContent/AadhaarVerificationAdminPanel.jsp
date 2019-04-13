@@ -19,9 +19,9 @@
 			<tr v-for="items in AadhaarDataArray">
 				<form>
 					<td>{{items.UID}}</td>
-					<td><img src="{{items.AadhaarImage}}"></td>
-					<td><img src="{{items.userImage}}"></td>
-					<button type="submit" @click="">Verify</button>
+					<td><img :src="+items.AadhaarImage"></td>
+					<td><img :src="+items.userImage"></td>
+					<td><button type="submit" @click="">Verify</button></td>
 				</form>
 			</tr>
 		</table>
